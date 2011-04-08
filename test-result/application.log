@@ -1,0 +1,5 @@
+08 Apr 2011 09:50:03,041 INFO  ~ Starting /Users/marioch/Development/proyectos/temp/test_play
+08 Apr 2011 09:50:04,338 WARN  ~ You're running Play! in DEV mode
+08 Apr 2011 09:50:04,483 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+08 Apr 2011 09:52:35,350 INFO  ~ Connected to jdbc:hsqldb:mem:playembed
+08 Apr 2011 09:52:36,326 INFO  ~ Application 'test_play' is now started !
