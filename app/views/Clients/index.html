@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'Clientes' /}
+
+<h1>Clientes</h1>
+
+#{if clients.size() > 1}
+<div id="clients">
+    #{list items:clients, as:'client'}
+    <div>
+        <h3>${client.name}</h3>
+        <p>${client.address}</p>
+        <p>${client.classification}</p>
+    </div>
+    #{/list}
+</div>
+#{/if}
+
+#{else}
+    <h3 style="color: red;">No tenemos clientes</h3>
+#{/else}
+<a href="@{Clients.newClient()}">Nuevo cliente</a>

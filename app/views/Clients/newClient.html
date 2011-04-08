@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'Nuevo Cliente' /}
+
+<h1> Nuevo Cliente</h1>
+
+#{form @Clients.create()}
+    <p>
+        <label>Nombre:</label>
+        <input type="text" name="name" id="name" />
+    </p>
+    <p>
+        <label>Direccion:</label>
+        <input type="text" name="address" id="address" />
+    </p>
+    <p>
+        <label>Clasificacion:</label>
+        <input type="text" name="classification" id="classification" />
+    </p>
+    <p>
+        <input type="submit" value="Guardar client" />
+    </p>
+#{/form}

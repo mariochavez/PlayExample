@@ -14,6 +14,10 @@ public class Client extends Model {
     @OneToMany(mappedBy="client", cascade=CascadeType.ALL)
     public List<Product> products;
 
+    public Client() {
+        this.products = new ArrayList<Product>();
+    }
+
     public Client(String name, String address, String
             classification) {
         this.name = name;
