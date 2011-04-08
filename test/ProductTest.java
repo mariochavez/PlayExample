@@ -5,6 +5,12 @@ import models.*;
 
 public class ProductTest extends UnitTest {
 
+    @Before
+    public void setup() {
+        Product.deleteAll();
+        Client.deleteAll();
+    }
+
     @Test
     public void createAndRetriveProduct() {
         Client client = new Client("Mario", "Conocida", "A").save();
