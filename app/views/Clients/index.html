@@ -3,13 +3,13 @@
 
 <h1>Clientes</h1>
 
-#{if clients.size() > 1}
+#{if clients.size() > 0}
 <div id="clients">
     #{list items:clients, as:'client'}
     <div>
-        <h3>${client.name}</h3>
-        <p>${client.address}</p>
+        <h3><a href="@{Clients.show(client.id)}">${client.name}</a></h3>
         <p>${client.classification}</p>
+        <p><a href="@{Clients.edit(client.id)}">Modificar</a>
     </div>
     #{/list}
 </div>

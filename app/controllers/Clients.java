@@ -31,5 +31,21 @@ public class Clients extends Controller {
 
         render(client);
     }
+
+    public static void edit(Long id) {
+        Client client = Client.findById(id);
+
+        render(client);
+    }
+
+    public static void update(Long id, String name, String address, String classification) {
+        Client client = Client.findById(id);
+        client.name = name;
+        client.address = address;
+        client.classification = classification;
+        client.save();
+
+        show(client.id);
+    }
 }
 

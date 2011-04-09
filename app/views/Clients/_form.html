@@ -1,0 +1,18 @@
+    <p>
+        <label>Nombre:</label>
+        <input type="text" name="name" id="name" value="${client?.name}" />
+    </p>
+    <p>
+        <label>Direccion:</label>
+        <input type="text" name="address" id="address" value="${client?.address}" />
+    </p>
+    <p>
+        <label>Clasificacion:</label>
+        <input type="text" name="classification" id="classification" value="${client?.classification}" />
+    </p>
+    <p>
+        <input type="submit" value="Guardar client" />
+    </p>
+    <p>
+        <a href="@{Clients.index()}">Cancelar</a>
+    </p>

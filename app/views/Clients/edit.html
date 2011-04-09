@@ -1,0 +1,9 @@
+#{extends 'main.html' /}
+#{set title:'Modificar Cliente' /}
+
+<h1>Modifcar Cliente</h1>
+
+#{form @Clients.update()}
+    <input type="hidden" name="id" id="id" value="${client.id}" />
+    #{include 'Clients/_form.html' /}
+#{/form}
