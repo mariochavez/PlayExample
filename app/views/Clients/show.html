@@ -6,4 +6,11 @@
 <p>${client.address}</p>
 <p>${client.classification}</p>
 
+#{form @Clients.destroy()}
+    <input type="hidden" name="id" id="id" value="${client.id}" />
+    <p>
+        <input type="submit" value="Eliminar client" />
+    </p>
+#{/form}
+
 <a href="@{Clients.index()}">Clientes</a>

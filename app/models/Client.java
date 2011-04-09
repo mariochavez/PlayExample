@@ -4,11 +4,15 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class Client extends Model {
+    @Required
     public String name;
+    @Required
     public String address;
+    @Required
     public String classification;
 
     @OneToMany(mappedBy="client", cascade=CascadeType.ALL)

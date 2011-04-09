@@ -4,11 +4,15 @@
 
 # Home page
 GET     /                                       Application.index
+GET     /change_es                              Application.changeEs
+GET     /change_en                              Application.changeEn
 
 GET     /clients                                Clients.index
 GET     /clients/new                            Clients.newClient
 GET     /clients/{id}/show                      Clients.show
 GET     /clients/{id}/edit                      Clients.edit
+
+DELETE  /clients/destroy                        Clients.destroy
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 

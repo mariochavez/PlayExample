@@ -1,17 +1,20 @@
     <p>
-        <label>Nombre:</label>
-        <input type="text" name="name" id="name" value="${client?.name}" />
+    <label>&{'client.name'}</label>
+        <input type="text" name="client.name" id="name" value="${client?.name}" />
+        <span>#{error 'client.name' /}</span>
     </p>
     <p>
-        <label>Direccion:</label>
-        <input type="text" name="address" id="address" value="${client?.address}" />
+        <label>&{'client.address'}</label>
+        <input type="text" name="client.address" id="address" value="${client?.address}" />
+        <span>#{error 'client.address' /}</span>
     </p>
     <p>
-        <label>Clasificacion:</label>
-        <input type="text" name="classification" id="classification" value="${client?.classification}" />
+        <label>&{'client.classification'}</label>
+        <input type="text" name="client.classification" id="classification" value="${client?.classification}" />
+        <span>#{error 'client.classification' /}</span>
     </p>
     <p>
-        <input type="submit" value="Guardar client" />
+    <input type="submit" value="&{'save.client'}" />
     </p>
     <p>
         <a href="@{Clients.index()}">Cancelar</a>

@@ -6,11 +6,14 @@ import play.mvc.*;
 import java.util.*;
 
 import models.*;
+import play.data.validation.*;
+import play.i18n.Messages;
 
 public class Clients extends Controller {
 
     public static void index() {
         List<Client> clients = Client.find("order by id").fetch();
+
         render(clients);
     }
 
@@ -19,10 +22,15 @@ public class Clients extends Controller {
         render(client);
     }
 
-    public static void create(String name, String address, String classification) {
-        Client client =  new Client(name, address, classification);
+    public static void create(@Valid Client client) {
+        if(validation.hasErrors()) {
+            flash.put("error", Messages.get("error.message"));
+            render("Clients/newClient.html", client);
+        }
+
         client.save();
 
+        flash.put("notice", Messages.get("client.created", client.name));
         show(client.id);
     }
 
@@ -38,14 +46,19 @@ public class Clients extends Controller {
         render(client);
     }
 
-    public static void update(Long id, String name, String address, String classification) {
-        Client client = Client.findById(id);
-        client.name = name;
-        client.address = address;
-        client.classification = classification;
+    public static void update(Client client) {
         client.save();
 
+        flash.put("notice", "El cliente " + client.name + " ha sido actualizado");
         show(client.id);
+    }
+
+    public static void destroy(Long id)
+    {
+        Client client = Client.findById(id);
+        client.delete();
+
+        index();
     }
 }
 
