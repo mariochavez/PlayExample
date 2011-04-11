@@ -4,9 +4,11 @@ import java.util.*;
 import javax.persistence.*;
 
 import play.db.jpa.*;
+import play.data.validation.*;
 
 @Entity
 public class Product extends Model {
+    @Required
     public String name;
     public String category;
 

@@ -6,6 +6,8 @@ import play.mvc.*;
 import java.util.*;
 
 import models.*;
+import notifiers.*;
+
 import play.data.validation.*;
 import play.i18n.Messages;
 
@@ -31,6 +33,7 @@ public class Clients extends Controller {
 
         client.save();
 
+        ClientNotifier.welcome(client);
         flash.put("notice", Messages.get("client.created", client.name));
         show(client.id);
     }
