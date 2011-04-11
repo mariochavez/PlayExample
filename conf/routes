@@ -11,10 +11,12 @@ GET     /clients                                Clients.index
 GET     /clients/new                            Clients.newClient
 GET     /clients/{id}/show                      Clients.show
 GET     /clients/{id}/edit                      Clients.edit
+POST    /clients/create                         Clients.create
+PUT     /clients/update                         Clients.update
 
 DELETE  /clients/destroy                        Clients.destroy
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
 # Catch all
-*       /{controller}/{action}                  {controller}.{action}
+#*       /{controller}/{action}                  {controller}.{action}

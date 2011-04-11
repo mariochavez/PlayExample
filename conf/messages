@@ -1,4 +1,12 @@
 validation.required = required
 
+client.name = Nombre
+client.address = Dirección 
+client.classification = Clasificación
+client.created = El client %s ha sido creado
+
+save.client = Guadar cliente
+
+error.message = Tenemos errores
 
 language.change = Your language has been chaneg to English

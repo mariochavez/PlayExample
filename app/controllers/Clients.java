@@ -13,6 +13,7 @@ public class Clients extends Controller {
 
     public static void index() {
         List<Client> clients = Client.find("order by id").fetch();
+        Logger.info("Cargando clientes: %d", clients.size());
 
         render(clients);
     }

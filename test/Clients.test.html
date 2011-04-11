@@ -1,0 +1,31 @@
+#{selenium 'Verify clients index'}
+    open('/clients')
+    waitForPageToLoad(2000)
+    assertTextPresent('Clientes')
+#{/selenium}
+
+#{selenium 'Can not create a new client with invalid data'}
+    open('/clients/new')
+    waitForPageToLoad(2000)
+
+    assertTextPresent('Nuevo Cliente')
+
+    type('client.name', 'Mario')
+    clickAndWait('css=input[type=submit]')
+
+    assertTextPresent('Tenemos errores')
+#{/selenium}
+
+#{selenium 'Can create a new client with valid data'}
+    open('/clients/new')
+    waitForPageToLoad(2000)
+
+    assertTextPresent('Nuevo Cliente')
+
+    type('client.name', 'Mario')
+    type('client.address', 'Conocida')
+    type('client.classification', 'A')
+    clickAndWait('css=input[type=submit]')
+
+    assertTextPresent('El client Mario ha sido creado')
+#{/selenium}
