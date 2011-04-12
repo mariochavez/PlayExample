@@ -2,6 +2,9 @@
 #{set title:'Clientes' /}
 
 <h1>Clientes</h1>
+<p>
+<a href="@{Secure.logout()}">Log out</a>
+</p>
 
 #{if clients.size() > 0}
 <div id="clients">

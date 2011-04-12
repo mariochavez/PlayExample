@@ -11,7 +11,16 @@ import notifiers.*;
 import play.data.validation.*;
 import play.i18n.Messages;
 
+@Check("admin")
+@With(Secure.class)
 public class Clients extends Controller {
+
+    @Before
+    static void setConnectedUser() {
+        if(Security.isConnected()) {
+            renderArgs.put("user", "mario@mail.com");
+        }
+    }
 
     public static void index() {
         List<Client> clients = Client.find("order by id").fetch();

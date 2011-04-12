@@ -16,10 +16,14 @@ PUT     /clients/update                         Clients.update
 
 DELETE  /clients/destroy                        Clients.destroy
 
+GET     /api/clients.json                       ClientsApi.indexJson(format:'json')
+GET     /api/clients.xml                        ClientsApi.indexXml(format:'xml')
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
 *       /admin                                  module:crud
+
+*       /                                       module:secure
 
 # Catch all
 #*       /{controller}/{action}                  {controller}.{action}

@@ -10,3 +10,7 @@ save.client = Guadar cliente
 error.message = Tenemos errores
 
 language.change = Your language has been chaneg to English
+
+secure.username = Su correo electronico:
+secure.password = Su clave:
+secure.signin = Entrar

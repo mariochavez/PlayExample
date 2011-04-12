@@ -1,0 +1,9 @@
+<clients>
+#{list clients, as:'client'}
+<client>
+        <name>${client.name}</name>
+        <address>${client.address}</address>
+        <classification>${client.classification}</classification>
+    </client>
+#{/list}
+</clients>

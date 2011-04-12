@@ -11,6 +11,7 @@
         #{get 'moreScripts' /}
     </head>
     <body>
+        <p>Hola ${user}</p>
         <h3 style="font-size:13px, color:blue; background-color:#BBBB11;">${flash.get("notice")}</h3>
         <h3 style="font-size:13px, color:blue; background-color:red;">${flash.get("error")}</h3>
         #{doLayout /}
